@@ -1,3 +1,66 @@
-.general_container{
-    
+.modal_container {
+    .row {
+        align-self: center;
+
+        .col {
+            width: 36rem;
+            height: 36rem;
+            border-radius: 2rem;
+            margin: 1.5rem 3.1rem 2rem 1.2rem;
+            box-shadow: 2px 2px 2px .5px rgba(0, 0, 0, 0.2);
+
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 4fr 1.1fr .3fr;
+                grid-template-areas:
+                    "img1 img2"
+                    "name1 name2"
+                    "type button";
+
+                .image_container {
+                    grid-area: img2;
+
+                    .image_crop {
+                        width: 20rem;
+                    }
+                }
+
+                .name_container {
+                    grid-area: name1;
+                }
+
+                .type {}
+            }
+        }
+    }
+}
+
+.col:first-child {
+    background-color: #ffde00;
+    color: #050527;
+}
+
+.col:nth-child(2) {
+    background-color: #3b4cca;
+    color: #fff;
+}
+
+.col:nth-child(3) {
+    background-color: #CC0000;
+    color: #fff;
+}
+
+.col:nth-child(3n + 4) {
+    background-color: #ffde00;
+}
+
+.col:nth-child(3n + 5) {
+    background-color: #3b4cca;
+    color: #fff;
+}
+
+.col:nth-child(3n + 6) {
+    background-color: #CC0000;
+    color: #fff;
 }

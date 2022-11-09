@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getPokemonImage } from '../../helpers/getPokemon';
+import { getPokemonData } from '../../helpers/getPokemon';
 import pokemon_logo from './img/pokemon_logo.png';
 
 import styles from './Header.module.scss';
@@ -9,10 +9,10 @@ export const Header = () => {
   const number = Math.floor(Math.random() * 1155);
 
   useEffect(() => {
-    getPokemonImage(number).then((data) => {
+    getPokemonData(number).then((data) => {
       setPokemonImageNav(data.sprites.front_default);
     })
-  }, [getPokemonImage]);
+  }, [getPokemonData]);
   return (
     <>
       <div className={styles.navbar}>
@@ -21,7 +21,7 @@ export const Header = () => {
 
           <div className={styles.pokemon_navbar}>
             <div className={styles.pokemon_container}>
-              <img src={pokemonImageNav} alt="pokemon_navbar" />
+              <img src={pokemonImageNav} alt="poke" />
             </div>
           </div>
         </div>

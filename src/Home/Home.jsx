@@ -7,13 +7,6 @@ import { getPokemon } from "../helpers/getPokemon";
 import styles from "./Home.module.scss";
 
 export const Home = () => {
-    const [pokemon, setPokemon] = useState();
-
-    useEffect(() => {
-        getPokemon().then((data) => {
-            console.log(data);
-        })
-    }, [])
 
     return (
         <>
@@ -25,11 +18,13 @@ export const Home = () => {
                     <div className={styles.button_container}>
                         <ButtonMed>memodex</ButtonMed>
                     </div>
-                </div>
-                <div className={styles.container_two}>
-                    <div className={styles.modal_container}>
-                        <PokemonModal />
+                    <div className={styles.button_container}>
+                        <ButtonMed>tcg</ButtonMed>
                     </div>
+                </div>
+
+                <div className={styles.modal_container}>
+                    <PokemonModal />
                 </div>
             </div>
         </>

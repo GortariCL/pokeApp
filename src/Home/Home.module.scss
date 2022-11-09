@@ -1,17 +1,31 @@
 .general_container {
+    position: relative;
+    text-align: center;
+
     .container_one {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 1rem auto;
+        margin: 3rem auto;
 
         .button_container {
             margin: auto 1rem;
         }
     }
-    .container_two{
-        .modal_container{
-            
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 -1rem 0 0;
         }
+    }
+
+
+    .modal_container {
+        text-align-last: center;
     }
 }
