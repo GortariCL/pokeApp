@@ -1,0 +1,17 @@
+.general_container {
+    .container_one {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem auto;
+
+        .button_container {
+            margin: auto 1rem;
+        }
+    }
+    .container_two{
+        .modal_container{
+            
+        }
+    }
+}

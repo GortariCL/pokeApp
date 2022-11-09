@@ -1,0 +1,21 @@
+@import "../../../variables.scss";
+
+.button_medium {
+    width: 10rem;
+    min-height: 3.5rem;
+    border-radius: 3.25rem;
+    background-color: #3b4cca;
+    color: #ffde00;
+    text-shadow: .5px .5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+    box-shadow: 2px 2px 2px .5px rgba(0, 0, 0, 0.2);
+    font-family: $font-pokedex;
+    font-weight: bold;
+    font-size: 1.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
