@@ -13,17 +13,27 @@
 
         .logo {
             width: 13rem;
+            transition: 200ms all;
+        }
+
+        .logo:hover{
+            transform: scale(1.2);
         }
 
         .pokemon_navbar {
             position: absolute;
             right: 10rem;
+            transition: 200ms all;
 
             .pokemon_container {
                 img {
                     width: 8rem;
                 }
             }
+        }
+
+        .pokemon_navbar:hover {
+            transform: scale(1.2);
         }
     }
 }

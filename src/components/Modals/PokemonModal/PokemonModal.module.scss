@@ -1,66 +1,106 @@
+@import "../../../variables.scss";
+
 .modal_container {
     .row {
         align-self: center;
 
         .col {
-            width: 36rem;
-            height: 36rem;
+            width: 30rem;
+            height: 40rem;
             border-radius: 2rem;
             margin: 1.5rem 3.1rem 2rem 1.2rem;
             box-shadow: 2px 2px 2px .5px rgba(0, 0, 0, 0.2);
 
             .container {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 4fr 1.1fr .3fr;
-                grid-template-areas:
-                    "img1 img2"
-                    "name1 name2"
-                    "type button";
+                display: flex;
+                flex-direction: column;
+
+                .header_modal_container {
+                    position: relative;
+
+                    .modal_icon {
+                        width: 2.5rem;
+                        position: absolute;
+                        left: 2rem;
+                        top: 1.3rem;
+                        transition: 200ms all;
+                    }
+
+                    .modal_icon:hover {
+                        filter: saturate(200%);
+                        transform: scale(1.1);
+                    }
+
+                    .pokemon_id {
+                        font-family: $font-pokedex;
+                        font-weight: $bold;
+                        position: absolute;
+                        right: 2rem;
+                    }
+                }
 
                 .image_container {
-                    grid-area: img2;
+                    grid-area: img;
+                    width: 20rem;
+                    height: 20rem;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: 2rem auto;
+                    position: relative;
+                    background-image: url("./img/wallpaper.jpg");
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
 
                     .image_crop {
-                        width: 20rem;
+                        width: 15rem;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
                     }
                 }
 
                 .name_container {
-                    grid-area: name1;
+                    font-family: $font-pokedex;
+                    text-transform: capitalize;
+                    margin: -1.5rem 0 0 0;
+
+                    .pokemon_name {
+                        margin: 0;
+                        font-size: 4rem;
+                        font-weight: $regular;
+                    }
                 }
 
-                .type {}
+                .type {
+                    .pokemon_type {
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin: .5rem .5rem;
+                    }
+                }
             }
         }
     }
 }
 
 .col:first-child {
-    background-color: #ffde00;
-    color: #050527;
+    background-color: $blue;
+    color: #FFF;
 }
 
 .col:nth-child(2) {
-    background-color: #3b4cca;
+    background-color: $dark-red;
     color: #fff;
 }
 
-.col:nth-child(3) {
-    background-color: #CC0000;
-    color: #fff;
+.col:nth-child(2n + 3) {
+    background-color: $blue;
+    color: #FFF;
 }
 
-.col:nth-child(3n + 4) {
-    background-color: #ffde00;
-}
-
-.col:nth-child(3n + 5) {
-    background-color: #3b4cca;
-    color: #fff;
-}
-
-.col:nth-child(3n + 6) {
-    background-color: #CC0000;
+.col:nth-child(2n + 4) {
+    background-color: $dark-red;
     color: #fff;
 }
