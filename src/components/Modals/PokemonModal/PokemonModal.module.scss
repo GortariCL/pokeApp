@@ -45,16 +45,30 @@
 
                             .tooltip {
                                 position: relative;
+                                font-family: $font-pokedex;
+                                font-weight: $bold;
+                                font-size: 1.1rem;
 
                                 .tooltiptext {
-                                    // visibility: hidden;
                                     display: none;
+                                    width: 6rem;
+                                    height: .8rem;
+                                    background-color: rgb(243, 243, 243);;
+                                    color: #000;
+                                    text-align: center;
+                                    padding: 5px 0;
+                                    border: 1.5px solid #000;
+                                    border-radius: 6px;
+                                    position: absolute;
+                                    z-index: 1;
+
+                                    .type_text{
+                                        margin: -.2rem 0 0 0;
+                                    }
                                 }
 
                                 &:hover .tooltiptext {
-                                    // visibility: visible;
-                                    position: absolute;
-                                    top: -20px;
+                                    top: -22px;
                                     display: block;
                                 }
                             }
@@ -159,6 +173,11 @@
 }
 
 .col:nth-child(2n + 4) {
+    background-color: $dark-red;
+    color: #fff;
+}
+
+.tooltiptext:first-child {
     background-color: $dark-red;
     color: #fff;
 }

@@ -94,7 +94,7 @@ export const PokemonModal = () => {
                                                                     <>
                                                                         <div key={`${Math.round(Date.now() * Math.random())}`} className={styles.tooltip}>
                                                                             {icon.component}
-                                                                            <div className={styles.tooltiptext}>{icon.spanish}</div>
+                                                                            <div className={styles.tooltiptext}><p className={styles.type_text}>{icon.spanish}</p></div>
                                                                         </div>
                                                                     </>
                                                                 )
