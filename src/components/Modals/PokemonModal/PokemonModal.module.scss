@@ -177,7 +177,16 @@
     color: #fff;
 }
 
-.tooltiptext:first-child {
-    background-color: $dark-red;
-    color: #fff;
-}
+// Smartphones
+@media screen and (max-width: 767px) {
+    .modal_container {
+      .row {
+        align-self: center;
+        .col {
+          width: 30rem;
+          height: 33.3rem;
+          margin: 0 0 2rem 0;
+        }
+      }
+    }
+  }
