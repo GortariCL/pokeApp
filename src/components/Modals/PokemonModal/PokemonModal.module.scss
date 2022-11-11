@@ -6,7 +6,7 @@
 
         .col {
             width: 30rem;
-            height: 40rem;
+            height: 33.3rem;
             border-radius: 2rem;
             border: .4rem solid $yellow;
             margin: 1.5rem 3.1rem 2rem 1.2rem;
@@ -42,6 +42,22 @@
                             display: inline-block;
                             vertical-align: middle;
                             margin: 1.5rem .15rem;
+
+                            .tooltip {
+                                position: relative;
+
+                                .tooltiptext {
+                                    // visibility: hidden;
+                                    display: none;
+                                }
+
+                                &:hover .tooltiptext {
+                                    // visibility: visible;
+                                    position: absolute;
+                                    top: -20px;
+                                    display: block;
+                                }
+                            }
                         }
                     }
 
@@ -84,13 +100,39 @@
                     font-family: $font-pokedex;
                     text-transform: capitalize;
                     margin: -3.5rem auto;
+                    text-align: -webkit-center;
                     // border: .2rem solid #000;
 
                     .pokemon_name {
                         margin: 0;
                         font-size: 3.5rem;
-                        font-weight: $regular;
+                        font-weight: $bold;
                     }
+
+                    .height_and_weight {
+                        font-size: 1.2rem;
+                        font-weight: $bold;
+                        width: 17rem;
+                        height: 1.5rem;
+                        background-color: $yellow;
+                        color: #000;
+                        border: 1px solid #000;
+                        border-radius: .3rem;
+                        margin: .2rem auto;
+
+                        .height {
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin: .2rem .5rem;
+                        }
+
+                        .weight {
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin: .2rem .5rem;
+                        }
+                    }
+
                 }
             }
         }

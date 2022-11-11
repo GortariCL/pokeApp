@@ -1,7 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { useState } from "react";
 import { getPokemon, getPokemonData } from "../../../helpers/getPokemon";
-
 import { Bug } from "../../TypeIcons/Bug/Bug";
 import { Dark } from "../../TypeIcons/Dark/Dark";
 import { Dragon } from "../../TypeIcons/Dragon/Dragon";
@@ -25,24 +24,24 @@ import icon from "./img/icon.png";
 import styles from "./PokemonModal.module.scss";
 
 const iconsDictionary = [
-    { type: "bug", component: <Bug /> },
-    { type: "dark", component: <Dark /> },
-    { type: "dragon", component: <Dragon /> },
-    { type: "electric", component: <Electric /> },
-    { type: "fairy", component: <Fairy /> },
-    { type: "fighting", component: <Fighting /> },
-    { type: "fire", component: <Fire /> },
-    { type: "flying", component: <Flying /> },
-    { type: "ghost", component: <Ghost /> },
-    { type: "grass", component: <Grass /> },
-    { type: "ground", component: <Ground /> },
-    { type: "ice", component: <Ice /> },
-    { type: "normal", component: <Normal /> },
-    { type: "poison", component: <Poison /> },
-    { type: "psychic", component: <Psychic /> },
-    { type: "rock", component: <Rock /> },
-    { type: "steel", component: <Steel /> },
-    { type: "water", component: <Water /> }
+    { type: "bug", component: <Bug />, spanish: "bicho" },
+    { type: "dark", component: <Dark />, spanish: "siniestro" },
+    { type: "dragon", component: <Dragon />, spanish: "dragón" },
+    { type: "electric", component: <Electric />, spanish: "eléctrico" },
+    { type: "fairy", component: <Fairy />, spanish: "hada" },
+    { type: "fighting", component: <Fighting />, spanish: "lucha" },
+    { type: "fire", component: <Fire />, spanish: "fuego" },
+    { type: "flying", component: <Flying />, spanish: "volador" },
+    { type: "ghost", component: <Ghost />, spanish: "fantasma" },
+    { type: "grass", component: <Grass />, spanish: "planta" },
+    { type: "ground", component: <Ground />, spanish: "tierra" },
+    { type: "ice", component: <Ice />, spanish: "hielo" },
+    { type: "normal", component: <Normal />, spanish: "normal" },
+    { type: "poison", component: <Poison />, spanish: "veneno" },
+    { type: "psychic", component: <Psychic />, spanish: "psíquico" },
+    { type: "rock", component: <Rock />, spanish: "roca" },
+    { type: "steel", component: <Steel />, spanish: "acero" },
+    { type: "water", component: <Water />, spanish: "agua" }
 ];
 
 export const PokemonModal = () => {
@@ -77,7 +76,7 @@ export const PokemonModal = () => {
         <div className={styles.modal_container}>
             <ul className={styles.row}>
                 {pokemonData.map(element => {
-                    const { name, id, sprites: { other: { "official-artwork": { front_default } } }, types } = element
+                    const { name, id, sprites: { other: { "official-artwork": { front_default } } }, types, height, weight } = element
                     return (
                         <li key={`${Math.round(Date.now() * Math.random())}`} className={styles.col}>
                             <div className={styles.container}>
@@ -92,9 +91,12 @@ export const PokemonModal = () => {
                                                         iconsDictionary.map(icon => {
                                                             if (e.type.name === icon.type) {
                                                                 return (
-                                                                    <div key={`${Math.round(Date.now() * Math.random())}`}>
-                                                                        {icon.component}
-                                                                    </div>
+                                                                    <>
+                                                                        <div key={`${Math.round(Date.now() * Math.random())}`} className={styles.tooltip}>
+                                                                            {icon.component}
+                                                                            <div className={styles.tooltiptext}>{icon.spanish}</div>
+                                                                        </div>
+                                                                    </>
                                                                 )
                                                             }
                                                         })
@@ -110,6 +112,10 @@ export const PokemonModal = () => {
                                 </div>
                                 <div className={styles.name_container}>
                                     <h3 className={styles.pokemon_name}>{name}</h3>
+                                    <div className={styles.height_and_weight}>
+                                        <p className={styles.height}>altura: {height / 10} mt</p>
+                                        <p className={styles.weight}>peso: {weight / 10} kilos</p>
+                                    </div>
                                 </div>
                             </div>
                         </li>
