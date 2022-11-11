@@ -8,8 +8,10 @@
             width: 30rem;
             height: 40rem;
             border-radius: 2rem;
+            border: .4rem solid $yellow;
             margin: 1.5rem 3.1rem 2rem 1.2rem;
             box-shadow: 2px 2px 2px .5px rgba(0, 0, 0, 0.2);
+            transition: 200ms all;
 
             .container {
                 display: flex;
@@ -19,16 +21,28 @@
                     position: relative;
 
                     .modal_icon {
-                        width: 2.5rem;
+                        width: 3rem;
                         position: absolute;
-                        left: 2rem;
-                        top: 1.3rem;
+                        left: 1.3rem;
+                        top: 1rem;
                         transition: 200ms all;
                     }
 
                     .modal_icon:hover {
                         filter: saturate(200%);
                         transform: scale(1.1);
+                    }
+
+                    .type {
+                        position: absolute;
+                        left: 4.5rem;
+                        top: .2rem;
+
+                        .pokemon_type {
+                            display: inline-block;
+                            vertical-align: middle;
+                            margin: 1.5rem .15rem;
+                        }
                     }
 
                     .pokemon_id {
@@ -40,12 +54,13 @@
                 }
 
                 .image_container {
-                    grid-area: img;
-                    width: 20rem;
+                    width: 28rem;
                     height: 20rem;
-                    border-radius: 50%;
+                    border-radius: 1rem;
                     overflow: hidden;
-                    margin: 2rem auto;
+                    margin: 4.5rem auto;
+                    border: .3rem solid $yellow;
+                    box-shadow: 2px 2px 2px .5px rgba(0, 0, 0, 0.2);
                     position: relative;
                     background-image: url("./img/wallpaper.jpg");
                     background-position: center;
@@ -62,25 +77,26 @@
                 }
 
                 .name_container {
+                    width: 28rem;
+                    height: 12rem;
+                    border-radius: 1rem;
+                    overflow: hidden;
                     font-family: $font-pokedex;
                     text-transform: capitalize;
-                    margin: -1.5rem 0 0 0;
+                    margin: -3.5rem auto;
+                    // border: .2rem solid #000;
 
                     .pokemon_name {
                         margin: 0;
-                        font-size: 4rem;
+                        font-size: 3.5rem;
                         font-weight: $regular;
                     }
                 }
-
-                .type {
-                    .pokemon_type {
-                        display: inline-block;
-                        vertical-align: middle;
-                        margin: .5rem .5rem;
-                    }
-                }
             }
+        }
+
+        .col:hover {
+            transform: scale(1.02);
         }
     }
 }

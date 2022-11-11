@@ -83,6 +83,26 @@ export const PokemonModal = () => {
                             <div className={styles.container}>
                                 <div className={styles.header_modal_container}>
                                     <img className={styles.modal_icon} src={icon} alt="icon" />
+
+                                    <div className={styles.type}>
+                                        {types.map(e => {
+                                            return (
+                                                <div key={`${Math.round(Date.now() * Math.random())}`} className={styles.pokemon_type}>
+                                                    {
+                                                        iconsDictionary.map(icon => {
+                                                            if (e.type.name === icon.type) {
+                                                                return (
+                                                                    <div key={`${Math.round(Date.now() * Math.random())}`}>
+                                                                        {icon.component}
+                                                                    </div>
+                                                                )
+                                                            }
+                                                        })
+                                                    }
+                                                </ div>
+                                            )
+                                        })}
+                                    </div>
                                     <p className={styles.pokemon_id}>{`${id}`}</p>
                                 </div>
                                 <div className={styles.image_container}>
@@ -90,21 +110,6 @@ export const PokemonModal = () => {
                                 </div>
                                 <div className={styles.name_container}>
                                     <h3 className={styles.pokemon_name}>{name}</h3>
-                                </div>
-                                <div className={styles.type}>
-                                    {types.map(e => {
-                                        return (
-                                            <div key={`${Math.round(Date.now() * Math.random())}`} className={styles.pokemon_type}>
-                                                {
-                                                    iconsDictionary.map(icon => {
-                                                        if (e.type.name === icon.type) {
-                                                            return icon.component
-                                                        }
-                                                    })
-                                                }
-                                            </ div>
-                                        )
-                                    })}
                                 </div>
                             </div>
                         </li>
