@@ -25,33 +25,25 @@ import icon from "./img/icon.png";
 import styles from "./PokemonModal.module.scss";
 
 const iconsDictionary = [
-    { id: "bug", component: <Bug /> },
-    { id: "dark", component: <Dark /> },
-    { id: "dragon", component: <Dragon /> },
-    { id: "electric", component: <Electric /> },
-    { id: "fairy", component: <Fairy /> },
-    { id: "fighting", component: <Fighting /> },
-    { id: "fire", component: <Fire /> },
-    { id: "flying", component: <Flying /> },
-    { id: "ghost", component: <Ghost /> },
-    { id: "grass", component: <Grass /> },
-    { id: "ground", component: <Ground /> },
-    { id: "ice", component: <Ice /> },
-    { id: "normal", component: <Normal /> },
-    { id: "poison", component: <Poison /> },
-    { id: "psychic", component: <Psychic /> },
-    { id: "rock", component: <Rock /> },
-    { id: "steel", component: <Steel /> },
-    { id: "water", component: <Water /> }
+    { type: "bug", component: <Bug /> },
+    { type: "dark", component: <Dark /> },
+    { type: "dragon", component: <Dragon /> },
+    { type: "electric", component: <Electric /> },
+    { type: "fairy", component: <Fairy /> },
+    { type: "fighting", component: <Fighting /> },
+    { type: "fire", component: <Fire /> },
+    { type: "flying", component: <Flying /> },
+    { type: "ghost", component: <Ghost /> },
+    { type: "grass", component: <Grass /> },
+    { type: "ground", component: <Ground /> },
+    { type: "ice", component: <Ice /> },
+    { type: "normal", component: <Normal /> },
+    { type: "poison", component: <Poison /> },
+    { type: "psychic", component: <Psychic /> },
+    { type: "rock", component: <Rock /> },
+    { type: "steel", component: <Steel /> },
+    { type: "water", component: <Water /> }
 ];
-
-const typeFinder = (type) => {
-
-    for (const [key, value] of iconsDictionary) {
-        return iconsDictionary[type];
-    }
-
-}
 
 export const PokemonModal = () => {
     const [pokemon, setPokemon] = useState([]);
@@ -105,7 +97,7 @@ export const PokemonModal = () => {
                                             <div key={`${Math.round(Date.now() * Math.random())}`} className={styles.pokemon_type}>
                                                 {
                                                     iconsDictionary.map(icon => {
-                                                        if (e.type.name === icon.id) {
+                                                        if (e.type.name === icon.type) {
                                                             return icon.component
                                                         }
                                                     })
