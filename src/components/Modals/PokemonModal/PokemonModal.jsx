@@ -91,12 +91,10 @@ export const PokemonModal = () => {
                                                         iconsDictionary.map(icon => {
                                                             if (e.type.name === icon.type) {
                                                                 return (
-                                                                    <>
-                                                                        <div key={`${Math.round(Date.now() * Math.random())}`} className={styles.tooltip}>
-                                                                            {icon.component}
-                                                                            <div className={styles.tooltiptext}><p className={styles.type_text}>{icon.spanish}</p></div>
-                                                                        </div>
-                                                                    </>
+                                                                    <div key={`${Math.round(Date.now() * Math.random())}`} className={styles.tooltip}>
+                                                                        {icon.component}
+                                                                        <div className={styles.tooltiptext}><p className={styles.type_text}>{icon.spanish}</p></div>
+                                                                    </div>
                                                                 )
                                                             }
                                                         })
@@ -105,7 +103,7 @@ export const PokemonModal = () => {
                                             )
                                         })}
                                     </div>
-                                    <p className={styles.pokemon_id}>{`${id}`}</p>
+                                    <p className={styles.pokemon_id}>{`ID: ${id}`}</p>
                                 </div>
                                 <div className={styles.image_container}>
                                     <img src={front_default} alt={`Poke-${id}`} className={styles.image_crop} />
